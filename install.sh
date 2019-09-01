@@ -5,19 +5,20 @@ clear
 BLUE='\e[34m'
 PURPLE='\e[35m'
 CYAN='\e[36m'
-WHITE='\e[37m'
 NC='\e[0m'
+
 #
 function confirm(){
     read -p "$*"
 }
+
 #
 echo ""
 echo -e "    ${PURPLE} _________      ___              __           _     __ "
 echo -e "    / ____<  /     /   |  ____  ____/ /________  (_)___/ / ${NC}"
-echo -e "  ${BLUE} /___ \ / /_____/ /| | / __ \/ __  / ___/ __ \/ / __  / "
+echo -e "  ${BLUE} /___ \\ / /_____/ /| | / __ \\/ __  / ___/ __ \\/ / __  / "
 echo -e "  ____/ // /_____/ ___ |/ / / / /_/ / /  / /_/ / / /_/ / ${NC}"
-echo -e "${CYAN} /_____//_/     /_/  |_/_/ /_/\__,_/_/   \____/_/\__,_/ ${CYAN}"
+echo -e "${CYAN} /_____//_/     /_/  |_/_/ /_/\\__,_/_/   \\____/_/\\__,_/ ${CYAN}"
 echo "                                                BY: lehmancurtis147"
 wait
 echo ""
@@ -32,11 +33,11 @@ sudo apt-get install android-tools-adb android-tools-fastboot
 ## this line has been included to give credit to the work I built on
 
 ## Install rules
-if [ ! /usr/lib/sysusers.d/android-udev.conf ]; then
+if [[ ! -f /usr/lib/sysusers.d/android-udev.conf ]]; then
     sudo cp ./android-udev.conf /usr/lib/sysusers.d
 fi
 
-if [ ! /etc/udev/rules.d/51-andriod.rules ]; then
+if [[ ! -f /etc/udev/rules.d/51-andriod.rules ]]; then
     sudo cp -v ./51-android.rules /etc/udev/rules.d;
     sudo chmod a+r /etc/udev/rules.d/51-android.rules
 fi
@@ -47,14 +48,14 @@ fi
 sudo groupdel adbusers; sudo addgroup adbusers
 
 # Configure adbusers
-if [ ! /usr/lib/sysusers.d/ ]; then
+if [[ ! -f /usr/lib/sysusers.d/ ]]; then
     sudo mkdir -p /usr/lib/sysusers.d/ && sudo cp android-udev.conf /usr/lib/sysusers.d/
 fi
 
 sudo systemd-sysusers # (1)
 
-# Add user to adb group
-sudo usermod -aG adbusers $(whoami)
+# Add user to adbusers
+sudo usermod -a -G adbusers "$(whoami)"
 
 # Reload rules
 sudo udevadm control --reload-rules
