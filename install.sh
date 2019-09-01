@@ -55,7 +55,11 @@ fi
 sudo systemd-sysusers # (1)
 
 # Add user to adbusers
+<<<<<<< HEAD
 sudo usermod -a -G adbusers "$(whoami)"
+=======
+sudo usermod -a -G adbusers $(whoami)
+>>>>>>> a8beb254441821aad3fe01844374f2edcbfcb365
 
 # Reload rules
 sudo udevadm control --reload-rules

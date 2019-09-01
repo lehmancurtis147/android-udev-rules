@@ -156,6 +156,32 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="0955", ATTRS{idProduct}=="7210", MODE="0660",
 SUBSYSTEM=="usb", ATTR{idVendor}=="0955", ATTR{idProduct}=="b442", MODE="0660", GROUP="adbusers"
 #
 #######################
+##  NVIDIA PRODUCTS  ##
+#######################
+#Nvidia Corp
+SUBSYSTEM=="usb", ATTR{idVendor}=="0955", MODE="0666", GROUP="adbusers"
+#Nvidia (SGS-Thompson)
+SUBSYSTEM=="usb", ATTR{idVendor}=="104a", MODE="0666", GROUP="adbusers"
+#Nvidia (NV1 main, DRAM version (SGS-Thompson branding))
+SUBSYSTEM=="usb", ATTR{idVendor}=="104a", ATTR{idProduct}=="0008", MODE="0666", GROUP="adbusers"
+#Nvidia (NV1 VGA, DRAM version (SGS-Thompson branding))
+SUBSYSTEM=="usb", ATTR{idVendor}=="104a", ATTR{idProduct}=="0009", MODE="0666", GROUP="adbusers"
+#Nvidia (SGS-Thompson/nVidia joint venture)
+SUBSYSTEM=="usb", ATTR{idVendor}=="12d2", MODE="0666", GROUP="adbusers"
+#Nvidia (NV3 [RIVA])
+SUBSYSTEM=="usb", ATTR{idVendor}=="12d2", ATTR{idProduct}=="0018", MODE="0666", GROUP="adbusers"
+#Nvidia (NV3T [RIVA 128ZX])
+SUBSYSTEM=="usb", ATTR{idVendor}=="12d2", ATTR{idProduct}=="0019", MODE="0666", GROUP="adbusers"
+#Nvidia (other PCI Devices)
+SUBSYSTEM=="usb", ATTR{idVendor}=="10de", MODE="0666", GROUP="adbusers"
+#Nvidia Shield
+SUBSYSTEM=="usb", ATTR{idVendor}=="0955", ATTRS{idProduct}=="7203", MODE="0666", GROUP="adbusers"
+#Nvidia Shield
+SUBSYSTEM=="usb", ATTR{idVendor}=="0955", ATTRS{idProduct}=="7210", MODE="0666", GROUP="adbusers"
+#Nvidia TV Shield
+SUBSYSTEM=="usb", ATTR{idVendor}=="0955", ATTR{idProduct}=="b442", MODE="0666", GROUP="adbusers"
+#
+#######################
 ## LESS SPECIFIC RLS ##
 #######################
 #Acer
@@ -211,9 +237,15 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="0409", MODE="0660", GROUP="adbusers"
 #Nextbit
 SUBSYSTEM=="usb", ATTR{idVendor}=="2c3f", MODE="0660", GROUP="adbusers"
 #Nook
+<<<<<<< HEAD
 SUBSYSTEM=="usb", ATTR{idVendor}=="2080", MODE="0660", GROUP="adbusers"
 #Oneplus
 SUBSYSTEM=="usb", ATTR{idVendor}=="2a70", MODE="0660", GROUP="adbusers"
+=======
+SUBSYSTEM=="usb", ATTR{idVendor}=="2080", MODE="0666", GROUP="adbusers"
+#Oneplus
+SUBSYSTEM=="usb", ATTR{idVendor}=="2a70", MODE="0666", GROUP="adbusers"
+>>>>>>> a8beb254441821aad3fe01844374f2edcbfcb365
 #Oppo
 SUBSYSTEM=="usb", ATTR{idVendor}=="22d9", MODE="0660", GROUP="adbusers"
 #OTGV
@@ -2293,7 +2325,11 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="0921", MODE="0660", GROUP="adbusers"
 #Dymo-CoStar Corp. 
 SUBSYSTEM=="usb", ATTR{idVendor}=="0922", MODE="0660", GROUP="adbusers"
 #IC Media Corp. 
+<<<<<<< HEAD
 SUBSYSTEM=="usb", ATTR{idVendor}=="0923", MODE="0660", GROUP="adbusers"
+=======
+SUBSYSTEM=="usb", ATTR{idVendor}=="0923", MODE="0666", GROUP="adbusers"
+>>>>>>> a8beb254441821aad3fe01844374f2edcbfcb365
 #Lakeview Research 
 SUBSYSTEM=="usb", ATTR{idVendor}=="0925", MODE="0660", GROUP="adbusers"
 #Summus, Ltd 
@@ -2357,7 +2393,11 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="094f", MODE="0660", GROUP="adbusers"
 #Kingston Technology 
 SUBSYSTEM=="usb", ATTR{idVendor}=="0951", MODE="0660", GROUP="adbusers"
 #RPM Systems Corp. 
+<<<<<<< HEAD
 SUBSYSTEM=="usb", ATTR{idVendor}=="0954", MODE="0660", GROUP="adbusers"
+=======
+SUBSYSTEM=="usb", ATTR{idVendor}=="0954", MODE="0666", GROUP="adbusers"
+>>>>>>> a8beb254441821aad3fe01844374f2edcbfcb365
 #BSquare Corp. 
 SUBSYSTEM=="usb", ATTR{idVendor}=="0956", MODE="0660", GROUP="adbusers"
 #Agilent Technologies, Inc. 
